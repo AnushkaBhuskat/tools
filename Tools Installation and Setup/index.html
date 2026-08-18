@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishKalp Tools & Setup Guide</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Navigation & Progress Bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <header class="top-nav">
+    <div class="nav-brand">
+      <div class="brand-badge">KrishKalp</div>
+      <span class="nav-title">Tools & Setup Guide</span>
+    </div>
+    
+    <div class="nav-actions">
+      <button class="nav-btn" id="btnOverview" title="Slide Overview Grid (Key: O)">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Grid <kbd>O</kbd></span>
+      </button>
+      
+      <button class="nav-btn" id="btnTheme" title="Toggle Dark/Light Mode (Key: T)">
+        <svg class="icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button class="nav-btn" id="btnFullscreen" title="Toggle Fullscreen (Key: F)">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Presentation Main Container -->
+  <main class="slides-wrapper" id="slidesWrapper">
+
+    <!-- SLIDE 1: Title Slide -->
+    <section class="slide active" data-slide="1">
+      <div class="slide-content title-slide">
+        <div class="hero-pill">Tools & Setup Guide 🚀</div>
+        <h1 class="hero-title">Developer Tools Installation & Setup</h1>
+        <p class="hero-subtitle">Step-by-step visual screenshot guide & video tutorials for complete software setup.</p>
+        
+        <div class="tool-badges-row">
+          <span class="tool-badge vscode"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.12a.999.999 0 0 0-1.276.064L.366 7.284a.999.999 0 0 0 .045 1.463l3.69 3.253-3.69 3.253a.999.999 0 0 0-.045 1.463l1.283 1.21a.999.999 0 0 0 1.276.064l4.12-3.12 9.46 8.63a1.49 1.49 0 0 0 1.705.29l4.94-2.377A1.5 1.5 0 0 0 24 20.06V3.94a1.5 1.5 0 0 0-.85-1.353z"/></svg> VS Code</span>
+          <span class="tool-badge git"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.44.516.515.655 1.258.428 1.9h2.763c.644-.227 1.385-.088 1.9.428.724.724.724 1.9 0 2.624-.724.724-1.9.724-2.624 0-.527-.528-.667-1.282-.437-1.916h-2.652v5.674c.227.108.437.257.616.437.724.724.724 1.9 0 2.624-.724.724-1.9.724-2.624 0-.724-.724-.724-1.9 0-2.624.218-.218.473-.377.752-.472V9.123c-.28-.095-.534-.254-.752-.472-.528-.528-.668-1.283-.437-1.917L7.22 3.97.452 10.738c-.603.604-.603 1.582 0 2.188l10.48 10.478c.604.604 1.582.604 2.187 0l10.427-10.478c.604-.604.604-1.582 0-2.188z"/></svg> Git</span>
+          <span class="tool-badge python"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.914 0C5.82 0 6.22 2.656 6.22 2.656v2.752h5.787v.825H3.97S0 5.753 0 11.9c0 6.148 3.457 5.922 3.457 5.922h2.062v-2.912s-.112-3.481 3.457-3.481h5.759s3.28 0 3.28-3.253V5.922S18.407 0 11.914 0zm-3.08 1.83a1.01 1.01 0 1 1 0 2.02 1.01 1.01 0 0 1 0-2.02zm1.096 10.457c6.094 0 5.694-2.656 5.694-2.656V6.88h-5.787v-.825h8.037S24 6.538 24 12.378c0 6.148-3.457 5.922-3.457 5.922h-2.062v2.912s.112 3.481-3.457 3.481h-5.759s-3.28 0-3.28 3.253v-5.922s-.393-5.922 6.094-5.922zm3.08 10.237a1.01 1.01 0 1 1 0-2.02 1.01 1.01 0 0 1 0 2.02z"/></svg> Python</span>
+          <span class="tool-badge postgres"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 4.97 0 11.1c0 5.12 3.73 9.4 8.76 10.74.19.04.38-.07.38-.25v-1.63c-3.15.68-3.82-1.36-3.82-1.36-.5-1.27-1.22-1.6-1.22-1.6-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1.01 1.73 2.65 1.23 3.3.94.1-.73.39-1.23.71-1.51-2.52-.29-5.17-1.26-5.17-5.61 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.44.11-3 0 0 .95-.3 3.12 1.16A10.87 10.87 0 0 1 12 6.11c.97 0 1.95.13 2.87.38 2.16-1.47 3.11-1.16 3.11-1.16.63 1.56.24 2.71.12 3 .73.79 1.17 1.8 1.17 3.04 0 4.36-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.1 0 1.51-.01 2.73-.01 3.1 0 .19.18.3.38.25C20.27 20.5 24 16.22 24 11.1 24 4.97 18.63 0 12 0z"/></svg> PostgreSQL & pgAdmin</span>
+          <span class="tool-badge appscript"><svg class="badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Apps Script</span>
+          <span class="tool-badge aitools">🤖 AI Developer Stack</span>
+          <span class="tool-badge ga4">📊 Google Analytics</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Session Agenda -->
+    <section class="slide" data-slide="2">
+      <div class="slide-content">
+        <div class="section-tag">Agenda</div>
+        <h2 class="slide-title">Software & Tools We Will Cover Today</h2>
+        <p class="slide-intro">Follow step-by-step screenshot guides and video tutorials for each software.</p>
+
+        <div class="timeline-container">
+          <div class="timeline-step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <h4>VS Code & Extensions </h4>
+              <p>Install VS Code, add Python, Prettier & Live Server extensions.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <h4>VS Code Terminal & Basic Commands</h4>
+              <p>Open integrated terminal and practice basic folder creation & navigation commands.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <h4>Git Setup & Configuration </h4>
+              <p>Install Git and set up global user name and email configuration.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">04</div>
+            <div class="step-body">
+              <h4>Python & Virtual Environment </h4>
+              <p>Install Python (check PATH box!) and create a virtual environment (`.venv`).</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">05</div>
+            <div class="step-body">
+              <h4>PostgreSQL & pgAdmin Setup </h4>
+              <p>Install pgAdmin 4 database management GUI and connect to PostgreSQL server.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">06</div>
+            <div class="step-body">
+              <h4>Google Apps Script — Create Google Forms</h4>
+              <p>Write Apps Script code to automatically create and publish Google Forms.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">07</div>
+            <div class="step-body">
+              <h4>Modern AI Developer Tools Stack</h4>
+              <p>Explore ChatGPT, GitHub Copilot, Cursor, Gemini, Claude, Antigravity & AI Studio.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-num">08</div>
+            <div class="step-body">
+              <h4>Web Analytics & Tracking </h4>
+              <p>Understand user traffic tracking, pageview metrics, and event analytics in Google Analytics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: VS Code & Extensions -->
+    <section class="slide" data-slide="3">
+      <div class="slide-content">
+        <div class="section-tag">Tool 01</div>
+        <h2 class="slide-title">VS Code Installation & Extensions Guide</h2>
+        <p class="slide-intro">Visual Studio Code is your primary code editor.</p>
+
+        <!-- Video Tutorial Banner -->
+        <div class="video-banner-card">
+          <div class="video-info">
+            <span class="video-icon">▶️</span>
+            <div>
+              <strong>VS Code Complete Setup Video Tutorial</strong>
+              <p>Watch step-by-step video guide on installing VS Code and setting up extensions.</p>
+            </div>
+          </div>
+          <a href="https://youtu.be/bN6DE-4uFNo?si=kmEP3ksWsNWlKqAy" target="_blank" class="yt-video-btn">
+            Watch Tutorial (YouTube) ↗
+          </a>
+        </div>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>📥 Step 1: Download & Install</h3>
+              <p>Go to <a href="https://code.visualstudio.com" target="_blank" style="color: var(--accent-cyan);">code.visualstudio.com</a> &rarr; Click <strong>Download for Windows / Mac</strong> &rarr; Run Installer.</p>
+            </div>
+
+            <div class="card">
+              <h3>🧩 Step 2: Extensions to Install</h3>
+              <p class="text-sm">Click the <strong>Extensions Icon</strong> on the left sidebar (or press <kbd>Ctrl+Shift+X</kbd>):</p>
+              <ul class="checklist">
+                <li><label><input type="checkbox" class="task-check" data-id="ext-python"> <strong>Python</strong> (by Microsoft)</label></li>
+                <li><label><input type="checkbox" class="task-check" data-id="ext-prettier"> <strong>Prettier - Code Formatter</strong></label></li>
+                <li><label><input type="checkbox" class="task-check" data-id="ext-liveserver"> <strong>Live Server</strong> (Web Server Preview)</label></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Visual Screenshot UI Diagram -->
+          <div class="split-col">
+            <div class="ui-mockup-card">
+              <div class="ui-mockup-header">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="ui-title">VS Code Extensions Sidebar Screenshot</span>
+              </div>
+              <div class="ui-mockup-body">
+                <div class="vscode-sidebar-mock">
+                  <div class="sidebar-icons">
+                    <div class="sb-icon" title="Files">📁</div>
+                    <div class="sb-icon" title="Search">🔍</div>
+                    <div class="sb-icon active-click-target" title="Click here for Extensions">
+                      🧩 <span class="click-badge">CLICK HERE (Ctrl+Shift+X)</span>
+                    </div>
+                  </div>
+                  <div class="sidebar-content">
+                    <div class="search-box-mock">🔍 Search extensions...</div>
+                    <div class="ext-item-mock">
+                      <strong>Python</strong>
+                      <span class="install-btn-mock">Install</span>
+                    </div>
+                    <div class="ext-item-mock">
+                      <strong>Prettier - Code Formatter</strong>
+                      <span class="install-btn-mock">Install</span>
+                    </div>
+                    <div class="ext-item-mock">
+                      <strong>Live Server</strong>
+                      <span class="install-btn-mock">Install</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: VS Code Terminal & Commands -->
+    <section class="slide" data-slide="4">
+      <div class="slide-content">
+        <div class="section-tag">Terminal</div>
+        <h2 class="slide-title">VS Code Terminal & Basic Commands</h2>
+        <p class="slide-intro">Learn how to open the terminal in VS Code and run basic commands.</p>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>⌨️ How to Open Integrated Terminal</h3>
+              <p>Press <kbd>Ctrl + `</kbd> (backtick) OR click top menu <strong>Terminal &rarr; New Terminal</strong>.</p>
+            </div>
+
+            <div class="card">
+              <h3>📂 Creating Folders & Files</h3>
+              <div class="code-wrapper">
+                <button class="copy-btn" data-copy='mkdir my-project
+cd my-project'>Copy</button>
+                <pre><code># Create a new folder
+mkdir my-project
+
+# Navigate into the folder
+cd my-project</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card">
+              <h3>💻 Essential Terminal Commands Cheat Sheet</h3>
+              
+              <div class="command-block">
+                <code>pwd                  # Show current directory path</code>
+                <code>mkdir folder_name    # Create a new directory</code>
+                <code>cd folder_name       # Move into a folder</code>
+                <code>cd ..                # Move back up one folder</code>
+                <code>ls                   # List files (Linux / Mac / Git Bash)</code>
+                <code>dir                  # List files (Windows Command Prompt)</code>
+                <code>clear                # Clear terminal output</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Git Setup -->
+    <section class="slide" data-slide="5">
+      <div class="slide-content">
+        <div class="section-tag">Tool 02</div>
+        <h2 class="slide-title">Git Installation & Global Setup Guide</h2>
+        <p class="slide-intro">Git manages code versions on your system.</p>
+
+        <!-- Video Tutorial Banner -->
+        <div class="video-banner-card">
+          <div class="video-info">
+            <span class="video-icon">▶️</span>
+            <div>
+              <strong>Git & GitHub Complete Setup Video Tutorial</strong>
+              <p>Watch step-by-step video guide on installing Git and setting up global user configuration.</p>
+            </div>
+          </div>
+          <a href="https://youtu.be/SBEtF7EfY6w?si=_8n9tQDkuW4znx7U" target="_blank" class="yt-video-btn">
+            Watch Tutorial (YouTube) ↗
+          </a>
+        </div>
+
+        <div class="cards-grid grid-2">
+          <div class="card">
+            <h3>📥 Step 1: Download & Install Git</h3>
+            <p>Download Git from <a href="https://git-scm.com" target="_blank" style="color: var(--accent-cyan);">git-scm.com</a> and run the installer (keep default options).</p>
+          </div>
+
+          <div class="card">
+            <h3>⚙️ Step 2: Configure Name & Email</h3>
+            <p>Open terminal or Git Bash and run these two commands:</p>
+            
+            <div class="code-wrapper">
+              <button class="copy-btn" data-copy='git config --global user.name "Your Name"
+git config --global user.email "your.email@krishkalp.com"'>Copy Commands</button>
+              <pre><code># Set your full name
+git config --global user.name "Your Name"
+
+# Set your official email
+git config --global user.email "your.email@krishkalp.com"</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Python & Virtual Environment -->
+    <section class="slide" data-slide="6">
+      <div class="slide-content">
+        <div class="section-tag">Tool 03</div>
+        <h2 class="slide-title">Python 3 & Virtual Environment (`.venv`) Guide</h2>
+        <p class="slide-intro">Installing Python and creating an isolated project environment.</p>
+
+        <!-- Video Tutorial Banner -->
+        <div class="video-banner-card">
+          <div class="video-info">
+            <span class="video-icon">▶️</span>
+            <div>
+              <strong>Python & Virtual Environment Video Tutorial</strong>
+              <p>Watch step-by-step video guide on installing Python, PATH setup, and creating virtual environments.</p>
+            </div>
+          </div>
+          <a href="https://youtu.be/t2-l3WvWvqg?si=R5wAZvL8YOKSrDwt" target="_blank" class="yt-video-btn">
+            Watch Tutorial (YouTube) ↗
+          </a>
+        </div>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>📥 Step 1: Install Python 3.11+</h3>
+              <p>Download Python from <a href="https://python.org" target="_blank" style="color: var(--accent-cyan);">python.org</a>.</p>
+              
+              <!-- Installer Checkbox Highlight -->
+              <div class="installer-checkbox-mock">
+                <div class="mock-chk-box checked">☑</div>
+                <div>
+                  <strong>CRITICAL STEP IN INSTALLER:</strong>
+                  <p>Check the box: <code>Add python.exe to PATH</code> before clicking <strong>Install Now</strong>!</p>
+                </div>
+              </div>
+
+              <div class="code-wrapper">
+                <button class="copy-btn" data-copy='python --version
+pip --version'>Copy Test</button>
+                <pre><code># Verify in terminal:
+python --version
+pip --version</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card">
+              <h3>⚡ Step 2: Create & Activate `.venv`</h3>
+              <p>Create isolated virtual environment inside your project folder:</p>
+
+              <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="win-venv">Windows</button>
+                <button class="tab-btn" data-tab="mac-venv">macOS / Linux</button>
+              </div>
+
+              <div class="tab-content active" id="win-venv">
+                <div class="code-wrapper">
+                  <button class="copy-btn" data-copy='python -m venv .venv
+.\.venv\Scripts\Activate.ps1'>Copy Windows</button>
+                  <pre><code># 1. Create virtual environment
+python -m venv .venv
+
+# 2. Activate environment
+.\.venv\Scripts\Activate.ps1</code></pre>
+                </div>
+              </div>
+
+              <div class="tab-content" id="mac-venv">
+                <div class="code-wrapper">
+                  <button class="copy-btn" data-copy='python3 -m venv .venv
+source .venv/bin/activate'>Copy Mac</button>
+                  <pre><code># 1. Create virtual environment
+python3 -m venv .venv
+
+# 2. Activate environment
+source .venv/bin/activate</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: PostgreSQL & pgAdmin Setup -->
+    <section class="slide" data-slide="7">
+      <div class="slide-content">
+        <div class="section-tag">Tool 04</div>
+        <h2 class="slide-title">PostgreSQL & pgAdmin Connection Guide</h2>
+        <p class="slide-intro">Installing pgAdmin 4 database GUI and connecting to your database.</p>
+
+        <!-- Video Tutorial Banner -->
+        <div class="video-banner-card">
+          <div class="video-info">
+            <span class="video-icon">▶️</span>
+            <div>
+              <strong>PostgreSQL & pgAdmin Complete Video Tutorial</strong>
+              <p>Watch step-by-step video guide on setting up PostgreSQL server and registering database in pgAdmin.</p>
+            </div>
+          </div>
+          <a href="https://youtu.be/ddGTXBhaGWA?si=XhitXKGHo06XTCCq" target="_blank" class="yt-video-btn">
+            Watch Tutorial (YouTube) ↗
+          </a>
+        </div>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>📥 Step 1: Install pgAdmin 4</h3>
+              <p>Download pgAdmin 4 from <a href="https://www.pgadmin.org" target="_blank" style="color: var(--accent-cyan); font-weight: 700;">pgadmin.org</a> and run the installer.</p>
+            </div>
+
+            <!-- High-Contrast pgAdmin Connection Card -->
+            <div class="pgadmin-guide-card">
+              <div class="pgadmin-card-header">
+                <span class="pgadmin-icon">🐘</span>
+                <h4>pgAdmin 4 Server Connection Steps</h4>
+              </div>
+              <div class="pgadmin-steps-list">
+                <div class="pgadmin-step-item">
+                  <span class="step-badge">1</span>
+                  <div class="step-text">
+                    <strong>Open pgAdmin &rarr; Right click <i>Servers</i>:</strong>
+                    <span class="highlight-action-btn">Register &rarr; Server...</span>
+                  </div>
+                </div>
+
+                <div class="pgadmin-step-item">
+                  <span class="step-badge">2</span>
+                  <div class="step-text">
+                    <strong>General Tab:</strong> Enter Name as <code class="hl-code">KrishKalp Dev DB</code>
+                  </div>
+                </div>
+
+                <div class="pgadmin-step-item">
+                  <span class="step-badge">3</span>
+                  <div class="step-text">
+                    <strong>Connection Tab:</strong> Enter Hostname / IP Address
+                  </div>
+                </div>
+
+                <div class="pgadmin-step-item">
+                  <span class="step-badge">4</span>
+                  <div class="step-text">
+                    <strong>Credentials:</strong> Port <code class="hl-code">5432</code>, Username & Password
+                  </div>
+                </div>
+
+                <div class="pgadmin-step-item">
+                  <span class="step-badge green">5</span>
+                  <div class="step-text">
+                    <strong>Save:</strong> Click the <span class="highlight-action-btn green">Save Button</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card">
+              <h3>🔍 Step 2: Open Query Tool & Test SQL</h3>
+              <p class="text-sm">Right-click your database in pgAdmin &rarr; Click <strong>Query Tool</strong> and run:</p>
+              
+              <div class="code-wrapper">
+                <button class="copy-btn" data-copy='-- PostgreSQL Test Query in pgAdmin
+SELECT 
+    current_user AS user_name,
+    current_database() AS db_name,
+    now() AS current_time;'>Copy SQL</button>
+                <pre><code class="language-sql">-- PostgreSQL Test Query in pgAdmin
+SELECT 
+    current_user AS user_name,
+    current_database() AS db_name,
+    now() AS current_time;</code></pre>
+              </div>
+
+              <div class="status-indicator success" style="margin-top: 1rem;">
+                <span class="status-dot"></span>
+                <span>Success: Returns connected user name & server time.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: Google Apps Script - Create Google Forms -->
+    <section class="slide" data-slide="8">
+      <div class="slide-content">
+        <div class="section-tag">Tool 05</div>
+        <h2 class="slide-title">Google Apps Script: Creating Google Forms Guide</h2>
+        <p class="slide-intro">Automate Google Forms creation programmatically using Apps Script.</p>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>🌐 Step 1: Open Apps Script</h3>
+              <ol class="numbered-list">
+                <li>Go to <a href="https://script.google.com" target="_blank" style="color: var(--accent-cyan);">script.google.com</a>.</li>
+                <li>Click <strong>+ New project</strong>.</li>
+                <li>Replace default code with the form script on the right.</li>
+              </ol>
+            </div>
+
+            <div class="card">
+              <h3>▶️ Step 2: Run & Get Form URL</h3>
+              <ol class="numbered-list">
+                <li>Click ▶ <strong>Run</strong> button.</li>
+                <li>Click <strong>Review Permissions &rarr; Allow</strong>.</li>
+                <li>Check the <strong>Execution Log</strong> to view your new Form URL!</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card">
+              <h3>💻 Step 3: Google Form Script Code</h3>
+              
+              <div class="code-wrapper">
+                <button class="copy-btn" data-copy='function createKrishKalpForm() {
+  // 1. Create Google Form
+  const form = FormApp.create("KrishKalp Feedback Form");
+  form.setDescription("Official form created via Google Apps Script.");
+
+  // 2. Add Text Question
+  form.addTextItem()
+      .setTitle("What is your Full Name?")
+      .setRequired(true);
+
+  // 3. Add Multiple Choice Question
+  form.addMultipleChoiceItem()
+      .setTitle("Select your Department")
+      .setChoiceValues(["Software Engineering", "Data Science", "UI/UX Design"])
+      .setRequired(true);
+
+  // 4. Log Published Form URL
+  Logger.log("Published Form URL: " + form.getPublishedUrl());
+}'>Copy Script</button>
+                <pre><code class="language-javascript">function createKrishKalpForm() {
+  // 1. Create Google Form
+  const form = FormApp.create("KrishKalp Feedback Form");
+  form.setDescription("Created via Apps Script.");
+
+  // 2. Add Questions
+  form.addTextItem()
+      .setTitle("What is your Full Name?")
+      .setRequired(true);
+
+  form.addMultipleChoiceItem()
+      .setTitle("Select your Department")
+      .setChoiceValues(["Software Engineering", "Data Science"])
+      .setRequired(true);
+
+  // 3. Log Output URL
+  Logger.log("Form URL: " + form.getPublishedUrl());
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: Modern AI Developer Tools Stack -->
+    <section class="slide" data-slide="9">
+      <div class="slide-content">
+        <div class="section-tag">AI Productivity</div>
+        <h2 class="slide-title">Modern AI Developer Tools Stack 🤖</h2>
+        <p class="slide-intro">Boost your learning and coding productivity 3x using modern AI assistants.</p>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>⚡ 1. AI Coding Assistants & Editors</h3>
+              <ul class="bullet-list">
+                <li><strong>GitHub Copilot</strong>: Real-time inline code completion in VS Code.</li>
+                <li><strong>Cursor IDE</strong>: AI-first code editor for refactoring & debugging codebase.</li>
+                <li><strong>Google Antigravity</strong>: Agentic AI pair-programmer for automated coding tasks.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>💬 2. Conversational LLMs & Playgrounds</h3>
+              <ul class="bullet-list">
+                <li><strong>ChatGPT / Claude / Gemini</strong>: Explain code logic, debug tracebacks, and generate starter scripts.</li>
+                <li><strong>Google AI Studio</strong>: Test prompts, experiment with Gemini models, and generate API keys.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card card-highlight">
+              <h3>💡 Golden Rule for Developer AI Usage</h3>
+              <div class="info-box tip-box">
+                <div class="info-box-header">🎯 Best Practice</div>
+                <p>Use AI tools to accelerate your learning and debug code faster, but <strong>ALWAYS read, understand, and test</strong> the generated code before pushing it to production!</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>🚀 How AI Accelerates Your Daily Workflow</h3>
+              <div class="command-block">
+                <code>🐞 Debug Errors  : Instant diagnosis for terminal & syntax errors</code>
+                <code>📚 Learn Code    : Ask AI to explain complex scripts step-by-step</code>
+                <code>⚡ Starter Code  : Generate HTML templates, Python scripts & queries</code>
+                <code>📝 Documentation : Auto-generate code comments & documentation</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: Google Analytics (GA4) Overview -->
+    <section class="slide" data-slide="10">
+      <div class="slide-content">
+        <div class="section-tag">Analytics</div>
+        <h2 class="slide-title">Web Analytics: Google Analytics (GA4) 📊</h2>
+        <p class="slide-intro">Understand how applications track user traffic, pageviews, and performance metrics.</p>
+
+        <!-- Video Tutorial Banner -->
+        <div class="video-banner-card">
+          <div class="video-info">
+            <span class="video-icon">▶️</span>
+            <div>
+              <strong>Google Analytics (GA4) Setup Video Tutorial</strong>
+              <p>Watch step-by-step video guide on setting up Google Analytics tracking and event monitoring.</p>
+            </div>
+          </div>
+          <a href="https://youtu.be/PPTVyRuWm6s?si=-yi-voP8busckmSc" target="_blank" class="yt-video-btn">
+            Watch Tutorial (YouTube) ↗
+          </a>
+        </div>
+
+        <div class="content-split">
+          <div class="split-col">
+            <div class="card">
+              <h3>🔍 Why Developers Need Analytics</h3>
+              <ul class="bullet-list">
+                <li><strong>User Traffic Tracking</strong>: See live active users, top pages visited, and traffic sources.</li>
+                <li><strong>Event & Conversion Tracking</strong>: Measure button clicks, form submissions, and sign-ups.</li>
+                <li><strong>Performance Insights</strong>: Identify broken pages, bounce rates, and mobile vs desktop usage.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🌐 Main GA4 Metrics to Know</h3>
+              <div class="option-pill-group">
+                <div class="option-pill">
+                  <strong>Active Users & Sessions</strong>
+                  <p>Count of unique visitors and total user interaction sessions.</p>
+                </div>
+                <div class="option-pill">
+                  <strong>Custom Events</strong>
+                  <p>Triggered when users click specific buttons (e.g. `button_click_submit`).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="split-col">
+            <div class="card">
+              <h3>💻 Basic GA4 Website Integration Code</h3>
+              <p class="text-sm">Include this script tag inside your HTML <code>&lt;head&gt;</code> to start tracking:</p>
+
+              <div class="code-wrapper">
+                <button class="copy-btn" data-copy='<!-- Google Analytics GA4 Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRISHKALP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-KRISHKALP");
+</script>'>Copy GA Tag</button>
+                <pre><code class="language-html">&lt;!-- Google Analytics Tag --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-KRISHKALP"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-KRISHKALP");
+&lt;/script&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 11: Thank You Slide -->
+    <section class="slide" data-slide="11">
+      <div class="slide-content title-slide">
+        <div class="hero-pill">Setup Session Complete 🎉</div>
+        <h1 class="hero-title">Thank You!</h1>
+        <p class="hero-subtitle">You have successfully completed the tools installation and setup guide for KrishKalp.</p>
+        
+        <div class="card success-card" style="max-width: 650px; margin-top: 1rem;">
+          <h3>🚀 All Tools Ready for Action!</h3>
+          <p>Your VS Code, Git, Python environment, pgAdmin PostgreSQL client, Google Apps Script, AI productivity tools, and Google Analytics concepts are set up and ready to go.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Navigation Footer -->
+  <footer class="bottom-controls">
+    <div class="controls-left">
+      <span class="slide-indicator" id="slideIndicator">Slide 1 / 11</span>
+    </div>
+
+    <div class="controls-center">
+      <button class="ctrl-btn" id="btnPrev" title="Previous Slide (Key: Left Arrow / PageUp)">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <span>Prev</span>
+      </button>
+      
+      <button class="ctrl-btn primary" id="btnNext" title="Next Slide (Key: Right Arrow / Space / PageDown)">
+        <span>Next</span>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+    </div>
+
+    <div class="controls-right">
+      <span class="key-hint">Press <kbd>&larr;</kbd> <kbd>&rarr;</kbd> or <kbd>Space</kbd> to navigate</span>
+    </div>
+  </footer>
+
+  <!-- Modal: Slide Overview Grid -->
+  <div class="modal-overlay" id="overviewModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Slide Overview Grid</h3>
+        <button class="close-modal" id="closeOverview">&times;</button>
+      </div>
+      <div class="overview-grid" id="overviewGrid">
+        <!-- Dynamic thumbnails inserted by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
